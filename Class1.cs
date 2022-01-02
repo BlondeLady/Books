@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1k2c_1._3_2_
 {
-   class Book
+  class Book
     {
         private string _title;
         private string _author;
@@ -66,31 +66,7 @@ namespace _1k2c_1._3_2_
             return books;
         }
 
-        public static void GetLeafCount(string title, int pageCount)
-        {
-            Console.WriteLine($"{title} {pageCount}");
-        }
-
-        public static void GetTheMostPagesBook(Book[] books)
-        {
-            int MaxPages = books[0]._pageCount;
-            Book MaxPagesBook = books[0];
-
-            for (int i = 1; i < books.Length - 1; i++)
-            {
-                for (int j = i + 1; j < books.Length; j++)
-                {
-                    if (books[i]._pageCount < books[j]._pageCount)
-                    {
-                        MaxPages = books[j]._pageCount;
-                        MaxPagesBook = books[j];
-                    }
-                }
-            }
-
-            Console.WriteLine("\nКнига с max страницами : " + MaxPagesBook);
-        }
-       public static void GetLeafCount(Book[] books)
+        public static Book[] GetLeafCount(Book[] books)
         {
             Book[] leafs = new Book[books.Length];
             for (int i = 0; i < books.Length; i++)
@@ -108,10 +84,33 @@ namespace _1k2c_1._3_2_
                  z = books[2]._pageCount / 2;
                  a = books[3]._pageCount / 2;
                  b = books[4]._pageCount / 2;
-                 c = books[5]._pageCount / 2;   
+                 c = books[5]._pageCount / 2;
             }
             Console.WriteLine($"Количество листов: {x} {y} {z} {a} {b} {c} ");
+            return books;
         }
+
+        public static Book[] GetTheMostPagesBook(Book[] books)
+        {
+            int MaxPages = books[0]._pageCount;
+            Book MaxPagesBook = books[0];
+
+            for (int i = 1; i < books.Length - 1; i++)
+            {
+                for (int j = i + 1; j < books.Length; j++)
+                {
+                    if (books[i]._pageCount < books[j]._pageCount)
+                    {
+                        MaxPages = books[j]._pageCount;
+                        MaxPagesBook = books[j];
+                    }
+                }
+            }
+
+            Console.WriteLine("\nКнига с max страницами : " + MaxPagesBook);
+            return  books;
+        }
+    
     }
 
 }
