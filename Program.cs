@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1k2c_1._3_2_
 {
-    class Program
+   class Program
     {
         static void Main(string[] args)
         {
@@ -19,8 +19,6 @@ namespace _1k2c_1._3_2_
                 new Book("С# для чайников", "Д.И. Мюллер", 608, 1500),
                 new Book("Математика 6 класс", "Д.Ю. Воронцова", 98, 60),
             };
-            foreach (var g in Book.GetTheMostPagesBook(bookList))
-                Console.WriteLine(g);
             foreach (var g in Book.GetTheMostPagesBook(bookList))
                 Console.WriteLine(g);
             Console.ReadKey();
