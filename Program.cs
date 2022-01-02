@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace _1k2c_1._3_2_
 {
    class Program
-    {static void Main(string[] args)
+    {
+      static void Main(string[] args)
             {
                 Book[] bookList = new Book[]
                 {
@@ -21,6 +22,7 @@ namespace _1k2c_1._3_2_
                 foreach (var g in Book.GetTheMostPagesBooks(bookList))
                     Console.WriteLine(g);
                 Book.GetTheMostPagesBook(bookList);
+                Book.GetLeafCount(bookList);
                 Console.ReadKey();
             }
     }
