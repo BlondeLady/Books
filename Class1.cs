@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1k2c_1._3_2_
 {
-    class Book
+   class Book
     {
         private string _title;
         private string _author;
@@ -46,7 +46,7 @@ namespace _1k2c_1._3_2_
             set => _price = value != 0 ? value : 0;
         }
         public override string ToString() => $"{Title} {Author} {PageCount} {Price}";
-        public static Book[] GetTheMostPagesBook(Book[] books)
+        public static Book[] GetTheMostPagesBooks(Book[] books)
         {
             Book[] newOne = new Book[books.Length];
             for (int i = 0; i < books.Length; i++)
@@ -61,15 +61,35 @@ namespace _1k2c_1._3_2_
                         books[i] = books[j];
                         books[j] = buf;
                     }
-                     
                 }
             }
-  
             return books;
         }
+
         public static void GetLeafCount(string title, int pageCount)
         {
             Console.WriteLine($"{title} {pageCount}");
-        } 
+        }
+
+        public static void GetTheMostPagesBook(Book[] books)
+        {
+            int MaxPages = books[0]._pageCount;
+            Book MaxPagesBook = books[0];
+
+            for (int i = 1; i < books.Length - 1; i++)
+            {
+                for (int j = i + 1; j < books.Length; j++)
+                {
+                    if (books[i]._pageCount < books[j]._pageCount)
+                    {
+                        MaxPages = books[j]._pageCount;
+                        MaxPagesBook = books[j];
+                    }
+                }
+            }
+
+            Console.WriteLine("\nКнига с max страницами : " + MaxPagesBook);
+        }
     }
+
 }
