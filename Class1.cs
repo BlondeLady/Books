@@ -90,6 +90,28 @@ namespace _1k2c_1._3_2_
 
             Console.WriteLine("\nКнига с max страницами : " + MaxPagesBook);
         }
+       public static void GetLeafCount(Book[] books)
+        {
+            Book[] leafs = new Book[books.Length];
+            for (int i = 0; i < books.Length; i++)
+                leafs[i] = books[i];
+            int x = 0;
+            int y = 0;
+            int z = 0;
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            for (int i = 0; i < books.Length - 1; i++)
+            { 
+                 x = books[0]._pageCount / 2;
+                 y = books[1]._pageCount / 2;
+                 z = books[2]._pageCount / 2;
+                 a = books[3]._pageCount / 2;
+                 b = books[4]._pageCount / 2;
+                 c = books[5]._pageCount / 2;   
+            }
+            Console.WriteLine($"Количество листов: {x} {y} {z} {a} {b} {c} ");
+        }
     }
 
 }
