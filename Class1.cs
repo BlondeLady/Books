@@ -51,15 +51,21 @@ namespace _1k2c_1._3_2_
             Book[] newOne = new Book[books.Length];
             for (int i = 0; i < books.Length; i++)
                 newOne[i] = books[i];
-            foreach (var g in books)
+            for (int i = 0; i < books.Length - 1; i++)
             {
-                if (g.PageCount > pageCount)
+                for (int j = i + 1; j < books.Length; j++)
                 {
-                    Array.Resize(ref newOne, newOne.Length - 1);
-                    newOne[newOne.Length - 1] = g;
+                    if (books[i]._pageCount < books[j]._pageCount)
+                    {
+                        Book buf = books[i];
+                        books[i] = books[j];
+                        books[j] = buf;
+                    }
+                     
                 }
             }
-            return newOne;
+  
+            return books;
         }
         public static void GetLeafCount(string title, int pageCount)
         {
