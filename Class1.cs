@@ -76,9 +76,12 @@ namespace _1k2c_1._3_2_
         {
             int MaxPages = books[0]._pageCount;
             Book MaxPagesBook = books[0];
-            for (int i = 1; i < books.Length; ++i)
-                if (books[i]._pageCount > MaxPages) 
+            for (int i = 1; i < books.Length; i++)
+                if (books[i]._pageCount > MaxPages)
+                {
                     MaxPages = books[i]._pageCount;
+                    MaxPagesBook = books[i];
+                }
             return MaxPagesBook;
         }
     }
