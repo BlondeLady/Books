@@ -21,8 +21,8 @@ namespace _1k2c_1._3_2_
                 };
                 foreach (var g in Book.GetTheMostPagesBooks(bookList))
                     Console.WriteLine(g);
-                Book.GetTheMostPagesBook(bookList);
-                Book.GetLeafCount(bookList);
+                Console.WriteLine("\n" + Book.GetMaxPagesBook(bookList));
+                Console.WriteLine(Book.GetLeafCount(Book.GetMaxPagesBook(bookList)));
                 Console.ReadKey();
             }
     }
